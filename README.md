@@ -1,7 +1,8 @@
 gallery-soon
 ============
 
-![Travis Build Status](https://api.travis-ci.org/solmsted/gallery-soon.png)
+[![Travis Build Status](https://travis-ci.org/solmsted/gallery-soon.png)](https://travis-ci.org/solmsted/gallery-soon)
+
 
 Getting Started
 ---------------
