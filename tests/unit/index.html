@@ -12,8 +12,17 @@
 <script>
 YUI({
     coverage: ['gallery-soon'],
-    filter: (window.location.search.match(/[?&]filter=([^&]+)/) || [])[1] || 'raw'
-}).use('test-console', 'test', 'gallery-sson-tests', function(Y) {
+    filter: (window.location.search.match(/[?&]filter=([^&]+)/) || [])[1] || 'raw',
+    modules: {
+    	'gallery-soon': {
+    		fullpath: '/build/gallery-soon/gallery-soon-min.js',
+    		requires: [
+    			'node-base',
+    			'timers'
+    		]
+    	}
+    }
+}).use('test-console', 'test', 'gallery-soon', 'gallery-soon-tests', function(Y) {
     
     (new Y.Test.Console()).render('#logger');
 
