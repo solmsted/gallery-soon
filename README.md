@@ -16,3 +16,37 @@ so their behavior may change as standards evolve.
  * `postMessage`. A cross-frame messaging mechanism.
  * `MessageChannel`. A friendly version of `postMessage` that doesn't pollute
  a global event.
+
+## Using this module
+
+To use this module, look up the corresponding YUI Gallery build tag and include
+`gallery-soon` in your `YUI().use()` statement:
+
+```js
+YUI({
+    gallery: '{gallery-tag}'
+}).use('gallery-soon', 'promise', function (Y) {
+    
+    // promises are sped up!
+
+});
+```
+
+Alternatively, if you're self-hosting this module you can use YUI's configuration
+to make it load `gallery-soon` automatically every time you request the `timers`
+module:
+
+```js
+YUI({
+    modules: {
+        'gallery-soon': {
+            path: '...',
+            condition: {
+                trigger: 'timers'
+            }
+        }
+    }
+}).use('promise', function (Y) {
+    // ...
+});
+```
