@@ -46,7 +46,7 @@ YUI({
             }
         }
     }
-}).use('promise', function (Y) {
+}).use('timers', function (Y) {
     // ...
 });
 ```
