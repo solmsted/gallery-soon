@@ -3,7 +3,7 @@
 <head>
     <title>gallery-soon</title>
     <script src="/build/yui/yui.js"></script>
-    <script src="js/tests.js"></script>
+    <script src="js/gallery-soon-tests.js"></script>
     <meta charset="utf-8" />
 </head>
 <body class="yui3-skin-sam">
@@ -13,7 +13,7 @@
 YUI({
     coverage: ['gallery-soon'],
     filter: (window.location.search.match(/[?&]filter=([^&]+)/) || [])[1] || 'raw'
-}).use('test-console', 'test', 'module-tests', function(Y) {
+}).use('test-console', 'test', 'gallery-sson-tests', function(Y) {
     
     (new Y.Test.Console()).render('#logger');
 
