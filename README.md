@@ -1,6 +1,11 @@
 gallery-soon
 ============
 
+![Travis Build Status](https://api.travis-ci.org/solmsted/gallery-soon.png)
+
+Getting Started
+---------------
+
 `Y.soon` is YUI's method for scheduling an asynchronous operation that runs as
 soon as possible. In environments where it's supported, `soon` is a wrapper on
 top of `setImmediate`. Where it's not supported, it falls back to
@@ -17,7 +22,8 @@ so their behavior may change as standards evolve.
  * `MessageChannel`. A friendly version of `postMessage` that doesn't pollute
  a global event.
 
-## Using this module
+Using this module
+-----------------
 
 To use this module, look up the corresponding YUI Gallery build tag and include
 `gallery-soon` in your `YUI().use()` statement:
