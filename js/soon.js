@@ -13,6 +13,12 @@ if (soon._impl !== 'setTimeout') {
     return;
 }
 
+function makeThrow(e) {
+    return function () {
+        throw e;
+    };
+}
+
 // Since most of the implementations are based on events of a certain object
 // a queue is a way to avoid creating one new event emitter per callback
 // This function flushes the queue and makes sure the way errors work in
@@ -26,9 +32,7 @@ function flush() {
         try {
             _queue[i]();
         } catch (e) {
-            setTimeout(function () {
-                throw e;
-            }, 0);
+            setTimeout(makeThrow(e), 0);
         }
     }
 }
