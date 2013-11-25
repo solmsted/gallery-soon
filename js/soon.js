@@ -80,8 +80,10 @@ if (typeof MutationObserver !== 'undefined') {
 
         channel.port1.onmessage = flush;
 
-        soon._asynchronizer = function () {
-            dispatch();
+        soon._asynchronizer = function (callback) {
+            if (queue.push(callback) === 1) {
+                dispatch();
+            }
         };
         soon._impl = 'MessageChannel';
     }());
